@@ -226,7 +226,7 @@ let all_product = [
     precio_anterior: 120500,
   },
   {
-    id: 21,
+    id: 21.1,
     nombre:
       "Chaqueta bomber ajustada con cremallera completa en verde sólido para hombres",
     categoria: "hombre",

@@ -79,3 +79,20 @@
   background-color: red;
   color: #ffffff;
 }
+
+@media (max-width: 1000px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-logo p {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .nav-login-cart button {
+    width: 80px;
+    height: 36px;
+    font-size: 14px;
+  }
+}

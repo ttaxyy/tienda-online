@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const [menu, setMenu] = useState("tienda");
@@ -14,17 +15,41 @@ function NavBar() {
         <p>EnLinea</p>
       </div>
       <ul className="nav-menu">
-        <li onClick={() => setMenu("tienda")}>
-          Tienda {menu === "tienda" ? <hr /> : <></>}
+        <li>
+          <Link
+            to="/"
+            style={{ textDecoration: "none", color: "inherit", height: "50%" }}
+            onClick={() => setMenu("tienda")}
+          >
+            Tienda {menu === "tienda" ? <hr /> : <></>}
+          </Link>
         </li>
-        <li onClick={() => setMenu("hombre")}>
-          Hombre {menu === "hombre" ? <hr /> : <></>}
+        <li>
+          <Link
+            to="/hombre"
+            style={{ textDecoration: "none", color: "inherit", height: "50%" }}
+            onClick={() => setMenu("hombre")}
+          >
+            Hombre {menu === "hombre" ? <hr /> : <></>}
+          </Link>
         </li>
         <li onClick={() => setMenu("mujer")}>
-          Mujer {menu === "mujer" ? <hr /> : <></>}
+          <Link
+            to="/mujer"
+            style={{ textDecoration: "none", color: "inherit", height: "50%" }}
+            onClick={() => setMenu("hombre")}
+          >
+            Mujer {menu === "mujer" ? <hr /> : <></>}
+          </Link>
         </li>
         <li onClick={() => setMenu("niños")}>
-          Niños {menu === "niños" ? <hr /> : <></>}
+          <Link
+            to="/nino"
+            style={{ textDecoration: "none", color: "inherit", height: "50%" }}
+            onClick={() => setMenu("hombre")}
+          >
+            Niños {menu === "niños" ? <hr /> : <></>}
+          </Link>
         </li>
       </ul>
       <div className="nav-login-cart">
