@@ -1,9 +1,8 @@
 import "./Navbar.css";
 import { useState } from "react";
-
 import logo from "../assets/logo.png";
-import cart_icon from "../assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import Drawer from "../Drawer/Drawer";
 
 function NavBar() {
   const [menu, setMenu] = useState("tienda");
@@ -52,11 +51,12 @@ function NavBar() {
           </Link>
         </li>
       </ul>
+
+      {/* DRAWER */}
       <div className="nav-login-cart">
         <button>Login</button>
-        <img src={cart_icon} alt="carrito" />
-        <div className="nav-cart-count">0</div>
       </div>
+      <Drawer />
     </div>
   );
 }

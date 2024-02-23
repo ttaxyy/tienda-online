@@ -7,17 +7,14 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import clp from "../clp";
 
 const Cards = ({ data, titulo }) => {
-  const formatNumberToChileanPesos = (number) => {
-    // Formatea el número como un valor monetario con separadores de miles y decimales
-    const formattedNumber = new Intl.NumberFormat("es-CL", {
-      style: "currency",
-      currency: "CLP",
-      minimumFractionDigits: 0,
-    }).format(number);
+  const navigate = useNavigate();
 
-    return formattedNumber;
+  const handleDivClick = (key) => {
+    navigate(`/producto/${key}`);
   };
 
   return (
@@ -27,8 +24,16 @@ const Cards = ({ data, titulo }) => {
       </Typography>
       <Grid container spacing={2} sx={{ mb: "20px" }}>
         {data.map((producto, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Card>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            key={index}
+            onClick={() => handleDivClick(producto.id)}
+          >
+            <Card sx={{ cursor: "pointer" }}>
               <CardMedia
                 component="img"
                 alt={producto.nombre}
@@ -47,13 +52,13 @@ const Cards = ({ data, titulo }) => {
                     width: "50%",
                   }}
                 >
-                  {formatNumberToChileanPesos(producto.precio_anterior)}
+                  {clp(producto.precio_anterior)}
                 </Typography>
                 <Typography
                   variant="h6"
                   sx={{ width: "50%", textAlign: "right" }}
                 >
-                  {formatNumberToChileanPesos(producto.nuevo_precio)}
+                  {clp(producto.nuevo_precio)}
                 </Typography>
               </CardActions>
             </Card>
