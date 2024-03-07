@@ -1,24 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "src/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/**/*.{js,tsx}",
-      "use": "@vercel/static"
-    }
-  ],
-
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "status": 200,
-      "headers": {
-        "Strict-Transport-Security": "max-age=0"
-      }
+      "handle": "proxy",
+      "src": "/ruta-del-backend/(.*)",
+      "url": "http://backend-sin-ssl.com/$1"
     }
   ]
 }
