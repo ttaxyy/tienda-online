@@ -21,7 +21,7 @@
       "dest": "/$1",
       "status": 200,
       "headers": {
-        "Strict-Transport-Security": "max-age=0" // Desactivar HSTS para permitir acceso por HTTP
+        "Strict-Transport-Security": "max-age=0"
       }
     }
   ]
