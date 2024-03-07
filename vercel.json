@@ -2,8 +2,8 @@
   "routes": [
     {
       "handle": "proxy",
-      "src": "/ruta-del-backend/(.*)",
-      "url": "http://backend-sin-ssl.com/$1"
+      "src": "/8080/api/(.*)",
+      "url": "http://3.17.144.151//$1"
     }
   ]
 }
