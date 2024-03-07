@@ -9,14 +9,16 @@ import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const CarritoContext = createContext();
-useEffect(() => {
-  axios.get("http://3.17.144.151:8080/api/producto/lista").then((response) => {
-    console.log(response);
-  });
-}, []);
+
 function App() {
   const [carrito, setCarrito] = useState([]);
-
+  useEffect(() => {
+    axios
+      .get("http://52.55.195.159:8080/api/region/region/6")
+      .then((response) => {
+        console.log(response);
+      });
+  }, []);
   return (
     <>
       <CarritoContext.Provider value={carrito}>
