@@ -5,10 +5,15 @@ import Ninos from "./pages/Ninos";
 import Hombre from "./pages/Hombre";
 import Producto from "./pages/Producto";
 import { Routes, Route } from "react-router-dom";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const CarritoContext = createContext();
-
+useEffect(() => {
+  axios.get("http://3.17.144.151:8080/api/producto/lista").then((response) => {
+    console.log(response);
+  });
+}, []);
 function App() {
   const [carrito, setCarrito] = useState([]);
 
