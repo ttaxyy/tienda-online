@@ -64,19 +64,16 @@ const MyCard = ({ producto }) => {
 };
 
 const Cards = ({ data }) => {
-  const phoneNumber = "+56959344449"; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
-  const imageUrl =
-    "https://www.tuempresavirtual.cl/wp-content/uploads/2021/05/RAPIDEZ.png";
-  const message = "Hola, ¿cómo estás?"; // Reemplaza con el mensaje que deseas enviar
-
   const handleSendMessage = (e) => {
     e.stopPropagation();
     console.log("se envia a WSP");
   };
+
   const total = data.reduce((acumulador, producto) => {
     const subtotal = producto.nuevo_precio * producto.cantidad;
     return acumulador + subtotal;
   }, 0);
+
   return (
     <div onClick={(e) => e.stopPropagation()}>
       <Button
