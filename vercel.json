@@ -1,9 +1,12 @@
 {
   "routes": [
     {
-      "handle": "proxy",
-      "src": "/8080/api/(.*)",
-      "url": "http://3.17.144.151/$1"
+      "src": "/(.*)",
+      "dest": "/$1",
+      "status": 200,
+      "headers": {
+        "Strict-Transport-Security": "max-age=0"
+      }
     }
   ]
 }
